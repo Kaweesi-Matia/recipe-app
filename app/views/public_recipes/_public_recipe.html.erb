@@ -1,0 +1,14 @@
+<li>
+        <a href="<%= recipe_path(recipe) %>" class="public-recipe-wrapper">
+          <div class="public-recipe">
+            <div class = "public-recipe-name">
+              <h2><%= recipe.name%></h2>
+              <h2>By <%= recipe.user.name%></h2>
+            </div>
+            <div class = "public-recipe-price">
+              <p>Total food items: <%= recipe.related_recipe_foods.length %></p>
+              <p>Total price: $<%= recipe.total_price%></p>
+            </div>
+          </div>
+          </a>
+        <li>

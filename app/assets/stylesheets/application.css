@@ -1,0 +1,638 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body,
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.food-table {
+  width: 80%;
+  border: 2px solid;
+  margin: 3% 0 0 10%;
+  padding: 0;
+  text-align: center;
+}
+
+.food-table td,
+th {
+  border: 1px solid #edebeb;
+  padding: 8px;
+}
+
+.food-table tr:nth-child(odd) {
+  background-color: #edebeb;
+}
+
+.food-table button {
+  border: none;
+  text-decoration: underline;
+  color: blue;
+  background-color: transparent;
+}
+
+.new-food {
+  display: flex;
+  justify-content: end;
+  margin: 0 10% 0 0;
+}
+
+.new-food a {
+  text-decoration: none;
+  border: solid 2px;
+  padding: 5px;
+}
+
+/* INVENTORY */
+.notice {
+  color: green;
+}
+
+.inventory-section {
+  width: 80%;
+  margin: 3rem auto;
+}
+
+.inventory-section * {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.inventory-section h1 {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #000;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.inventory-section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #000;
+}
+
+.inventory-section p {
+  color: #000;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.inventory-section li {
+  list-style: none;
+}
+
+.inventory-section table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  border: 2px solid #000;
+  width: 100%;
+}
+
+.inventory-section th {
+  background-color: #e5e5e5;
+  border: 2px solid #000;
+  border-bottom: none;
+}
+
+.inventory-section td {
+  border: 2px solid #000;
+  border-top: none;
+  border-bottom: none;
+  opacity: 0.9;
+}
+
+.inventory-section td,
+.inventory-section th {
+  text-align: left;
+  padding: 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.inventory-section tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.inventory-empty-data {
+  width: calc(100% - 4rem);
+  padding: 4rem 2rem;
+  margin: 2rem 0;
+  background-color: #f5f5f5;
+  font-size: 18px;
+  font-weight: 800;
+  font-family: sans-serif;
+  color: rgb(126, 126, 126);
+}
+
+.inventory-new {
+  color: #0151ff;
+  font-size: 15px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.inventories-list {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  border: 2px #000 solid;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.inventory-remove,
+.inventory-delete {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #0151ff;
+  border-bottom: 1px #0151ff solid;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.inventory-remove {
+  font-size: 15px;
+}
+
+.inventory-delete {
+  font-size: 12px;
+}
+
+.inventories-list span {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inventory-form-cont {
+  width: 500px;
+  margin: 40px auto;
+  display: grid;
+  row-gap: 15px;
+  font-family: sans-serif;
+}
+
+.inventory-form-cont h1 {
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0;
+}
+
+.inventory-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.inventory-form {
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 5px;
+}
+
+.inventory-label {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.inventory-input,
+.inventory-textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 2px #000 solid;
+}
+
+.inventory-textarea {
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.inventory-add-btn,
+.inventory-submit-btn {
+  border: 2px #000 solid;
+  background-color: transparent;
+  box-shadow: 4px 4px 1px rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.inventory-add-btn {
+  padding: 0.5rem 3rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.inventory-submit-btn {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.inventory-form-cont select {
+  padding: 10px;
+  border: 2px #000 solid;
+  margin-bottom: 20px;
+}
+
+.inventory-shopping,
+.recipe-shopping {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.inventory-shopping h4,
+.recipe-shopping h4 {
+  font-size: 18px;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+.inventory-shopping a {
+  color: #0151ff;
+}
+
+.recipe-shopping a {
+  color: #000;
+}
+
+/* Recipes */
+.recipe-section {
+  width: 80%;
+  margin: 4rem auto;
+}
+
+.recipe-section * {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.recipe-section h1 {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #000;
+  width: 100%;
+  text-align: center;
+}
+
+.recipe-section h2 {
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #000;
+}
+
+.recipe-section p {
+  color: #000;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.recipe-section li {
+  list-style: none;
+}
+
+.recipe-section table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  border: 2px solid #000;
+  width: 100%;
+}
+
+.recipe-section th {
+  background-color: #e5e5e5;
+  border: 2px solid #000;
+  border-bottom: none;
+}
+
+.recipe-section td {
+  border: 2px solid #000;
+  border-top: none;
+  border-bottom: none;
+  opacity: 0.9;
+}
+
+.recipe-section td,
+.recipe-section th {
+  text-align: left;
+  padding: 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.recipe-section tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.recipe-empty-data {
+  width: calc(100% - 4rem);
+  padding: 4rem 2rem;
+  margin: 2rem 0;
+  background-color: #f5f5f5;
+  font-size: 18px;
+  font-weight: 800;
+  font-family: sans-serif;
+  color: rgb(126, 126, 126);
+}
+
+.recipe-new {
+  color: #0151ff;
+  font-size: 15px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.recipes-list {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  border: 2px #000 solid;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.recipe-remove {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #0151ff;
+  border-bottom: 1px #0151ff solid;
+  font-size: 13px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.recipes-list span {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recipes-list span a {
+  text-decoration: none;
+}
+
+.inventories-list span a {
+  text-decoration: none;
+}
+
+.recipe-form-cont {
+  width: 500px;
+  margin: 40px auto;
+  display: grid;
+  row-gap: 15px;
+  font-family: sans-serif;
+}
+
+.recipe-form-cont h1 {
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0;
+}
+
+.recipe-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.recipe-form {
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 5px;
+}
+
+.recipe-label {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.public-check {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.recipe-input,
+.recipe-textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 2px #000 solid;
+}
+
+.recipe-textarea {
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.recipe-add-btn,
+.recipe-submit-btn {
+  border: 2px #000 solid;
+  background-color: transparent;
+  box-shadow: 4px 4px 1px rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.recipe-add-btn {
+  padding: 0.5rem 3rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.recipe-submit-btn {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.recipe-form-cont select {
+  padding: 10px;
+  border: 2px #000 solid;
+  margin-bottom: 20px;
+}
+
+.recipe-form-cont .recipe-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
+.recipe-form-cont .recipe-form .recipe-label {
+  margin-top: 0;
+}
+
+.recipe-form-cont .recipe-form .recipe-input {
+  width: 100%;
+}
+
+.recipe-form-cont .recipe-form .recipe-input:last-child {
+  margin-bottom: 20px;
+}
+
+.public-btn {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  column-gap: 5px;
+}
+
+.disabled-cont,
+.enabled-cont {
+  width: 40px;
+  height: 20px;
+  background-color: green;
+  border: 1px #000 solid;
+  border-radius: 20px;
+  display: flex;
+}
+
+.disabled-cont button.enabled-cont button {
+  height: 100%;
+  width: 20px;
+  background-color: #fff;
+  outline: none;
+  border-radius: 20px;
+  border: 1px #000 solid;
+}
+
+.enabled-cont {
+  justify-content: flex-end;
+}
+
+.disabled-cont {
+  justify-content: flex-start;
+}
+
+.public-recipe-wrapper {
+  text-decoration: none;
+}
+
+.public-recipe-wrapper:hover {
+  opacity: 0.8;
+}
+
+.public-recipe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 2px #000 solid;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.public-recipe div {
+  display: grid;
+}
+
+.public-recipe-name {
+  row-gap: 1rem;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 80%;
+  padding: 1.5rem 10% 1.5rem 10%;
+  margin-bottom: 1rem;
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+}
+
+.navbar li {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+.navbar li:last-child {
+  display: none;
+}
+
+.navbar li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  color: #0151ff;
+}
+
+.inventories-list span a:hover,
+.inventories-list span button:hover {
+  opacity: 0.7;
+}
+
+.recipes-list span a:hover,
+.recipes-list span button:hover {
+  opacity: 0.7;
+}
+
+.sign_up_div,
+.sign_in_div,
+.forget_password_div,
+.user_profile_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.sign_up_text,
+.sign_in_text,
+.forget_password {
+  color: rgb(68, 0, 255);
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.actions_sign_up {
+  margin-top: 25px;
+}
+
+._field {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

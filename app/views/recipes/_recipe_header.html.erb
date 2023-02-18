@@ -1,0 +1,24 @@
+<div class="inventory-section">
+  <div class="recipe-header"><h1><%= @recipe.name%></h1>
+  <div class = "inventory-shopping">
+    <span>
+      <h4>Preparation time: <%= @recipe.preparation_time%></h4>
+      <h4>Cooking time: <%= @recipe.cooking_time%></h4>
+    </span>
+    <div class="public-btn">
+      <% if @recipe.public == true %>
+      <h4>Public: </h4><span class="enabled-cont"><button></button></span>
+      <% else %>
+      <h4>Public: </h4><span class="disabled-cont"><button></button></span>
+      <% end %>
+    </div>
+  </div>
+  <div class = "recipe-shopping">
+        <a href="/recipes/<%= @recipe.id %>/generate_shopping_list" class="inventory-add-btn">
+        Generate Shopping list
+        </a>
+          <% if @recipe.user_id == current_user.id%>
+          <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id), class:"inventory-add-btn"%>
+        <% end%>
+  </div>
+</div>

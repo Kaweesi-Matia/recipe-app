@@ -1,0 +1,14 @@
+
+<% if user_signed_in? %>
+<%= button_to "sign out", destroy_user_session_path, method: :delete %>
+<% @users.each do |user| %>
+    <%= render user %>
+    <% end %>
+<% else %>
+<h3> Hello! do you have an account?
+<%= link_to "Login", new_user_session_path  %> </h3>
+<h3> Click here to
+<%= link_to "Sign up", new_user_registration_path %></h3>
+<%end%>
+
+

@@ -1,0 +1,26 @@
+<section class="inventory-section">
+  <div class = "inventory-header">
+    <h1><%= @inventory.name%></h1>
+    <%= link_to "Add Food", new_inventory_inventory_food_path(@inventory.id), class:"inventory-add-btn"%>
+  </div>
+
+  <% if @inventory.related_inventory_foods.length > 0 %>
+  <table>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Actions</th>
+    </tr>
+    <% @inventory.related_inventory_foods.each do |inventory_food| %>
+      <tr>
+        <td><%= inventory_food.food.name %></td>
+        <td><%= inventory_food.quantity %><%= inventory_food.food.measurment_unit %></td>
+        <td> <%= button_to "Remove", inventory_inventory_food_path(inventory_food.inventory.id, inventory_food), method: :delete , class:"inventory-remove"%></td>
+      </tr>
+    <% end %>
+  </table>
+  <% else %>
+    <h3 class="inventory-empty-data">No Food added to this Inventory</h3>
+  <% end %>
+
+</section>

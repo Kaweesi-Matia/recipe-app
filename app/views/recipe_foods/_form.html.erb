@@ -1,0 +1,25 @@
+<%= form_with(model: recipe_food, url: recipe_recipe_foods_path(@recipe), method: :post, class:"inventory-form") do |form| %>
+  <% if recipe_food.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(recipe_food.errors.count, "error") %> prohibited this recipe_food from being saved:</h2>
+
+      <ul>
+        <% recipe_food.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if @foods.length > 0 %>
+      <%= form.label :quantity, class:"inventory-label" %>
+      <%= form.number_field :quantity,:required => true , class:"inventory-input"%>
+
+      <%= form.label "Select Food", class:"inventory-label" %>
+      <%= form.select :food_id, @foods.map { |food| [food.name, food.id] } %>
+
+      <%= form.submit "Add Food To Recipe", class:"inventory-submit-btn"%>
+  <% else %>
+    <h3 class="inventory-empty-data">No Food in Food store.</h3>
+  <% end %>
+<% end %>

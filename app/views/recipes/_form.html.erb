@@ -1,0 +1,32 @@
+<%= form_with(model: recipe, class:"inventory-form") do |form| %>
+  <% if recipe.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+        <% recipe.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= form.label :name, class:"inventory-label" %>
+    <%= form.text_field :name, :required => true, class:"inventory-input" %>
+
+    <%= form.label :preparation_time, class:"inventory-label" %>
+    <%= form.text_field :preparation_time , class:"inventory-input"%>
+
+    <%= form.label :cooking_time, class:"inventory-label" %>
+    <%= form.text_field :cooking_time , class:"inventory-input"%>
+
+    <%= form.label :description, class:"inventory-label" %>
+    <%= form.text_area :description , placeholder: 'Write your description...', class:"inventory-textarea"%>
+
+  <div class="public-check">
+    <%= form.label :public %>
+    <%= form.check_box :public %>
+  </div>
+
+    <%= form.submit 'Create', class:"inventory-submit-btn"%>
+<% end %>

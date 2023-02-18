@@ -1,0 +1,11 @@
+<section class="inventory-section">
+  <% if @public_recipes.length > 0 %>
+    <ul>
+      <% @public_recipes.each do |recipe| %>
+        <%= render 'public_recipe',recipe: recipe %>
+      <% end %>
+    </ul>
+  <% else %>
+    <h3 class="recipe-empty-data">No Public Recipes!</h3>
+  <% end %>
+</section>

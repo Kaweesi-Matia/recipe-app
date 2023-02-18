@@ -1,0 +1,28 @@
+
+<div class="forget_password_div">
+<h2 class="forget_password">Forgot your password?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions",
+    style:"
+    background-color: rgb(68, 0, 255);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 10px;
+    padding: 8px 20px;
+    "%>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

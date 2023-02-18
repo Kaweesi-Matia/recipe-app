@@ -1,0 +1,11 @@
+<%= form_with url: "/recipes/#{@recipe.id}/generate_shopping_list", method: :post, data:{turbo:false}, class:"inventory-form" do |form| %>
+
+  <% if @inventories.length > 0 %>
+      <%= form.label "Select Inventory", class:"inventory-label" %>
+      <%= form.select :inventory_id, @inventories.map { |inventory| [inventory.name, inventory.id] } %>
+
+      <%= form.submit "Generate", class:"inventory-submit-btn"%>
+  <% else %>
+    <h3 class="inventory-empty-data">No inventory in inventory store.</h3>
+  <% end %>
+<% end %>

@@ -1,0 +1,10 @@
+<div class = "inventory-shopping">
+    <span>
+      <h4>Amount of food to buy: <%= @food_list.length%></h4>
+      <h4>Total value of food needed: $<%= @total_price%></h4>
+    </span>
+    <span>
+      <h4>Recipe: <a href="<%= recipe_path(@recipe) %>"><%= @recipe.name%></a></h4>
+      <h4>Inventory: <a href="<%= inventory_path(@inventory) %>"><%= @inventory.name%></a></h4>
+    </span>
+  </div>
